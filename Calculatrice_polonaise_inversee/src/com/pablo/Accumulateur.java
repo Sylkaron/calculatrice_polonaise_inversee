@@ -11,24 +11,25 @@ public class Accumulateur implements IAccumulateur {
 	
 	//Attributes
 	
-	
+	Double res = null;
+	Pile P;
 
 	/**
 	 * 
 	 */
 	public Accumulateur() {
-		// TODO Auto-generated constructor stub
+		this.P = new Pile();
 	}
 
 	@Override
 	public void push() {
-		// TODO Auto-generated method stub
+		P.push(res);
 
 	}
 
 	@Override
 	public void drop() {
-		// TODO Auto-generated method stub
+	
 
 	}
 
@@ -40,25 +41,58 @@ public class Accumulateur implements IAccumulateur {
 
 	@Override
 	public void add() {
-		// TODO Auto-generated method stub
+		if(res == null) {
+			res = P.pop()+P.pop();
+		}
+		else {
+			res = res + P.pop()
+		}
 
 	}
 
 	@Override
 	public void sub() {
-		// TODO Auto-generated method stub
+		if(res == null) {
+			res = P.pop()-P.pop();
+		}
+		else {
+			res = res-P.pop();
+		}
 
 	}
 
 	@Override
 	public void mult() {
-		// TODO Auto-generated method stub
+		if(res == null) {
+			res = P.pop()*P.pop();
+		}
+		else {
+			res = res*P.pop();
+		}
 
 	}
 
 	@Override
 	public void div() {
-		// TODO Auto-generated method stub
+		if(res == null) {
+			Double a = P.pop();
+			Double b = P.pop();
+			if(b == 0) {
+				System.err.println("Division par 0");
+			}
+			else {
+				res = a/b;
+			}
+		}
+		else {
+			Double a = P.pop();
+			if(a==0) {
+				System.err.println("Division par 0");
+			}
+			else {
+				res = res/a;
+			}
+		}
 
 	}
 
@@ -82,8 +116,12 @@ public class Accumulateur implements IAccumulateur {
 
 	@Override
 	public void reset() {
-		// TODO Auto-generated method stub
+		res = null;
 
+	}
+	
+	public void clear() {
+		res = 0.0;
 	}
 
 }
