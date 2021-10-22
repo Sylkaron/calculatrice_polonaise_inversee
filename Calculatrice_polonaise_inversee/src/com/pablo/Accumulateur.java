@@ -26,6 +26,10 @@ public class Accumulateur implements IAccumulateur {
 		P.push(res);
 
 	}
+	
+	public void push(Double a) {
+		P.push(a);
+	}
 
 	@Override
 	public void drop() {
@@ -35,7 +39,10 @@ public class Accumulateur implements IAccumulateur {
 
 	@Override
 	public void swap() {
-		// TODO Auto-generated method stub
+		Double a = P.pop();
+		P.push(res);
+		res = a;
+		
 
 	}
 
@@ -45,7 +52,7 @@ public class Accumulateur implements IAccumulateur {
 			res = P.pop()+P.pop();
 		}
 		else {
-			res = res + P.pop()
+			res = res + P.pop();
 		}
 
 	}
@@ -116,12 +123,12 @@ public class Accumulateur implements IAccumulateur {
 
 	@Override
 	public void reset() {
-		res = null;
+		res = 0.;
 
 	}
 	
 	public void clear() {
-		res = 0.0;
+		P.clear();;
 	}
 
 }

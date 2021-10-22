@@ -24,7 +24,7 @@ public class Pile extends Stack<Object> {
 		this.push(nombre);
 	};
 	
-	public double pop() {
+	public Double pop() {
 		return this.pop();
 	};
 
