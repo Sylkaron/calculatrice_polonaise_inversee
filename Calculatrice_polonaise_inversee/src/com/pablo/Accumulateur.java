@@ -16,7 +16,7 @@ public class Accumulateur implements IAccumulateur {
 	
 	private Double res = null;
 	private Pile P;
-	private PropertyChangeEvent emetteur;
+	private  private PropertyChangeSupport evt = new PropertyChangeSupport(this);
 
 	/**
 	 * 
@@ -28,11 +28,14 @@ public class Accumulateur implements IAccumulateur {
 	@Override
 	public void push() {
 		P.push(res);
-
+		evt.firePropertyChange("push",
+				res, null);
 	}
 	
 	public void push(Double a) {
 		P.push(a);
+		evt.firePropertyChange("push",a, res
+				);
 	}
 
 	@Override
@@ -46,17 +49,20 @@ public class Accumulateur implements IAccumulateur {
 		Double a = P.pop();
 		P.push(res);
 		res = a;
-		
 
 	}
 
 	@Override
 	public void add() {
 		if(res == null) {
+			
 			res = P.pop()+P.pop();
+			evt.firePropertyChange("add",res,null);
 		}
 		else {
+			Double save = res;
 			res = res + P.pop();
+			evt.firePropertyChange("add",save,res);
 		}
 
 	}
@@ -65,9 +71,12 @@ public class Accumulateur implements IAccumulateur {
 	public void sub() {
 		if(res == null) {
 			res = P.pop()-P.pop();
+			evt.firePropertyChange("sub",res,null);
 		}
 		else {
+			Double save = res;
 			res = res-P.pop();
+			evt.firePropertyChange("sub",res,save);
 		}
 
 	}
@@ -76,9 +85,12 @@ public class Accumulateur implements IAccumulateur {
 	public void mult() {
 		if(res == null) {
 			res = P.pop()*P.pop();
+			evt.firePropertyChange("mult",res,null);
 		}
 		else {
+			Double save = res;
 			res = res*P.pop();
+			evt.firePropertyChange("mult",res,save);
 		}
 
 	}
@@ -93,6 +105,7 @@ public class Accumulateur implements IAccumulateur {
 			}
 			else {
 				res = a/b;
+				evt.firePropertyChange("div",res,null);
 			}
 		}
 		else {
@@ -101,7 +114,9 @@ public class Accumulateur implements IAccumulateur {
 				System.err.println("Division par 0");
 			}
 			else {
+				Double save = res;
 				res = res/a;
+				evt.firePropertyChange("div",res,save);
 			}
 		}
 
@@ -110,17 +125,18 @@ public class Accumulateur implements IAccumulateur {
 	@Override
 	public void neg() {
 		// TODO Auto-generated method stub
+		res = -res;
 
 	}
 
 	@Override
-	public void backspace() {
+	public void backspace() { //retour suupr un char
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void accumuler(char caractere) {
+	public void accumuler(char caractere) { // 1 - 5 - 0 → 150
 		// TODO Auto-generated method stub
 
 	}
