@@ -9,7 +9,12 @@ import java.util.Stack;
  * @author pablo
  *
  */
-public class Pile extends Stack<Object> {
+public class Pile extends Stack<Double> {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 

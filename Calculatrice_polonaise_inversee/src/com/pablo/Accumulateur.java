@@ -3,6 +3,9 @@
  */
 package com.pablo;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeSupport;
+
 /**
  * @author pablo
  *
@@ -11,8 +14,9 @@ public class Accumulateur implements IAccumulateur {
 	
 	//Attributes
 	
-	Double res = null;
-	Pile P;
+	private Double res = null;
+	private Pile P;
+	private PropertyChangeEvent emetteur;
 
 	/**
 	 * 

@@ -1,10 +1,14 @@
 package com.pablo;
 
-public class Controleur {
+import java.beans.PropertyChangeEvent;
 
-	public static void main(String[] args) {
+public class Controleur implements java.beans.PropertyChangeListener {
+
+
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }
