@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pablo;
+
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeSupport;
@@ -16,7 +16,7 @@ public class Accumulateur implements IAccumulateur {
 	
 	private Double res = null;
 	private Pile P;
-	 PropertyChangeSupport evt = new PropertyChangeSupport(this);
+	private final PropertyChangeSupport evt = new PropertyChangeSupport(this);
 
 	/**
 	 * 
@@ -28,14 +28,13 @@ public class Accumulateur implements IAccumulateur {
 	@Override
 	public void push() {
 		P.push(res);
-		evt.firePropertyChange("push",
-				res, null);
+		evt.firePropertyChange("push",res, null);
 	}
 	
 	public void push(Double a) {
 		P.push(a);
-		evt.firePropertyChange("push",a, res
-				);
+		evt.firePropertyChange("push",a, res);
+		
 	}
 
 	@Override
@@ -149,6 +148,10 @@ public class Accumulateur implements IAccumulateur {
 	
 	public void clear() {
 		P.clear();;
+	}
+	
+	public void addPropertyChangeListener(String str, Controleur ctrl) {
+		this.evt.addPropertyChangeListener(str, ctrl);
 	}
 
 }

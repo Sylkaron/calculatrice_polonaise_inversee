@@ -1,7 +1,7 @@
 /**
- * 
+ * Implémentation de l'interface IAccumulateur suivant le diagramme UML de l'énoncé
  */
-package com.pablo;
+
 
 /**
  * @author pablo

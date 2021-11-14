@@ -1,7 +1,7 @@
 /**
- * 
+ * Implementation de la classe Pile et de ses differentes méthodes depuis la superclasse Stack
  */
-package com.pablo;
+
 
 import java.util.Stack;
 
