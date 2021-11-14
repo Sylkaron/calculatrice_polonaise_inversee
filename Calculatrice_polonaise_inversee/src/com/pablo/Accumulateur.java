@@ -16,7 +16,7 @@ public class Accumulateur implements IAccumulateur {
 	
 	private Double res = null;
 	private Pile P;
-	 PropertyChangeSupport evt = new PropertyChangeSupport(this);
+	PropertyChangeSupport evt = new PropertyChangeSupport(this);
 
 	/**
 	 * 
