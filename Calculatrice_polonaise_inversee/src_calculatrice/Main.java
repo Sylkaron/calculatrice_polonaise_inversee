@@ -52,6 +52,7 @@ public class Main extends Application {
 			//Autre
 		Button bClear = new Button("AC");
 		Button bReset = new Button("Drop");
+		Button bSwap = new Button("<->");
 		Button bSuppr = new Button("<-");
 		
 			//Action des boutons
@@ -76,11 +77,16 @@ public class Main extends Application {
 		
 		bClear.setOnAction(controleur);
 		bReset.setOnAction(controleur);
+		bSwap.setOnAction(controleur);
 		bSuppr.setOnAction(controleur);
 		
 		//Interface Graphique
 		InterfaceGraphique interfaceGraphique = new InterfaceGraphique(stage, b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bVirgule, bSigne,
-																				bPlus, bMoins, bProduit, bDivise, bPush, bClear, bReset, bSuppr);
+																				bPlus, bMoins, bProduit, bDivise, bPush, bClear, bReset, bSwap, bSuppr);
+		
+		
+		//Lien controleur/Interface
+		controleur.setInterfaceGraphique(interfaceGraphique);
 		
 		//Ouverture de la fenetre
 		interfaceGraphique.afficher();

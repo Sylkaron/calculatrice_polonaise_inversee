@@ -17,7 +17,7 @@ public class InterfaceGraphique implements IView {
 
 	public InterfaceGraphique(Stage stage, Button b0, Button b1, Button b2, Button b3, Button b4, Button b5, Button b6, Button b7, 
 			Button b8, Button b9, Button bVirgule, Button bSigne, Button bPlus, Button bMoins, Button bProduit, Button bDivise, 
-			Button bPush, Button bClear, Button bReset, Button bSuppr) {
+			Button bPush, Button bClear, Button bReset, Button bSwap, Button bSuppr) {
 		
 		//Taille fenetre
 		Dimension dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -57,7 +57,7 @@ public class InterfaceGraphique implements IView {
 		HBox l4 = new HBox();
 		l4.getChildren().addAll(b0, bVirgule, bSigne);
 		HBox l5 = new HBox();
-		l5.getChildren().addAll(bClear, bReset, bSuppr);
+		l5.getChildren().addAll(bClear, bReset, bSwap, bSuppr);
 		
 		paveNumerique.getChildren().addAll(l1, l2, l3, l4, l5);
 		
