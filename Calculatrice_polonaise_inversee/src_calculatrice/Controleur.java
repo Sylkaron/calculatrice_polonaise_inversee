@@ -27,7 +27,7 @@ public class Controleur implements PropertyChangeListener, EventHandler<ActionEv
 	public void handle(ActionEvent evt) {
 		// TODO Auto-generated method stub
 		
-		evt.getSource().toString()
+		evt.getSource().toString();
 	}
 
 }
