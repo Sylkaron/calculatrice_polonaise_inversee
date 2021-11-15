@@ -13,7 +13,7 @@ public interface IView {
 	
 	public void afficher();
 	
-	public void change(List<String> data);
+	public void change(String[] data);
 	
 	public void change(String accu);
 	

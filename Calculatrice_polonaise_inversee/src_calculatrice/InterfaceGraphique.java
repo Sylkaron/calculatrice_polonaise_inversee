@@ -87,10 +87,10 @@ public class InterfaceGraphique implements IView {
 	}
 
 	@Override
-	public void change( List<String> data) {
+	public void change(String[] data) {
 		for(int i = 0; i < historique.length; i++) {
-			if(data.get(i) == null) historique[i].setText(" ");
-			else historique[i].setText(data.get(i));
+			if(data[i] == null) historique[i].setText(" ");
+			else historique[i].setText(data[i]);
 		};
 
 	}
