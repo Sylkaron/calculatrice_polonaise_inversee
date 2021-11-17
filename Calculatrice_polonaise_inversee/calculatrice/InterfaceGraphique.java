@@ -1,6 +1,4 @@
 import java.awt.Dimension;
-import java.util.List;
-
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -81,22 +79,22 @@ public class InterfaceGraphique implements IView {
 	}
 
 	@Override
-	public void afficher() {
+	public void afficher() { //afficher la fenêtre
 		this.stage.show();
 
 	}
 
 	@Override
-	public void change(String[] data) {
+	public void change(String[] data) { //Modifier l'historique
 		for(int i = 0; i < historique.length; i++) {
-			if(data[i] == null) historique[i].setText(" ");
+			if(data[i] == "") historique[i].setText(" ");
 			else historique[i].setText(data[i]);
 		};
 
 	}
 
 	@Override
-	public void change(String accu) {
+	public void change(String accu) { //Modifier l entrée
 		res.setText(accu);
 
 	}

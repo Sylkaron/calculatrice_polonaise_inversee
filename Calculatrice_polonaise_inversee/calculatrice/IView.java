@@ -1,14 +1,12 @@
 /**
- * Implémentation de l'interface IView suivant le diagramme UML de l'énoncé
- */
-
-
-import java.util.List;
-
-/**
  * @author pablo
  *
  */
+
+/**
+ * Implémentation de l'interface IView suivant le diagramme UML de l'énoncé
+ */
+
 public interface IView {
 	
 	public void afficher();

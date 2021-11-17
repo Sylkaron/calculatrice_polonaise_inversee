@@ -25,11 +25,11 @@ public class Controleur implements PropertyChangeListener, EventHandler<ActionEv
 		String name = evt.getPropertyName();
 		
 		if(name.equals("res")) {
-			Object res = evt.getNewValue();
-			String resStr = res.toString();
-			if(resStr.length()>0) {
+			Object val = evt.getNewValue();
+			String res = val.toString();
+			if(res.length()>0) {
 				
-				char caractere = resStr.charAt(resStr.length()-1);
+				char caractere = res.charAt(res.length()-1);
 				String h = Character.toString(caractere);
 				
 				if(h.equals("z")) {
@@ -41,7 +41,7 @@ public class Controleur implements PropertyChangeListener, EventHandler<ActionEv
 					System.err.println("  ! Too large number !");
 				}
 				else{
-					interfaceGraphique.change(resStr);
+					interfaceGraphique.change(res);
 				}
 			}
 		}

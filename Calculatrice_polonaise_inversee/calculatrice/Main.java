@@ -4,18 +4,15 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	
+	public static void main(String[] args) {		
 		launch(args);
 		
 	}
 
 
 	@Override
-	public void start(Stage stage) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public void start(Stage stage) throws Exception{		
 		//Accumulateur
 		Accumulateur accumulateur = new Accumulateur();
 		
